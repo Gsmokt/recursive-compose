@@ -47,4 +47,4 @@ const compose = (y: Array<Function>): ((x: string) => Promise<String[]>) =>
 // Ze slicem można zacząć od pierwszego indeksu,
 
 const result = compose([first, second, third])(" hello world");
-console.log(result.then((x) => console.log(x)));
+result.then((x) => console.log(x));
