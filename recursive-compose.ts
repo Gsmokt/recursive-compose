@@ -39,7 +39,7 @@ const third = (a: string): Promise<String[]> => {
 
 const compose = (y: Array<Function>): ((x: string) => Promise<String[]>) =>
   y.length === 1
-    ? async (a: string) => await y[0](a)
+    ? (a: string) => y[0](a)
     : async (a: string) => compose(y.slice(1))(await y[0](a));
 
 // W pierwszej wersji jest tablica na odwrót,
